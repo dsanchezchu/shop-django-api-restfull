@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Producto: {{ products.name }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-zinc-200">
+    <div class="container mx-auto px-4">
+      <a href="#" class="block rounded-lg p-4 shadow-sm shadow-indigo-100">
+        <img
+          alt=""
+          src="https://wallpapers.com/images/high/4k-marble-background-3cmdd4f1m8tv2rw8.webp"
+          class="h-56 w-full rounded-md object-cover"
+        />
+
+        <div class="mt-2">
+          <dl>
+            <div>
+              <dt class="sr-only">Price</dt>
+
+              <dd class="text-sm text-gray-500">
+                {% if products.price == 0 %}GRATIS{% else %}s/{{ products.price}}{% endif %}
+              </dd>
+            </div>
+
+            <div>
+              <dt class="sr-only">Address</dt>
+              <dd class="font-medium">{{ products.name }}</dd>
+            </div>
+            <div>
+              <dt class="sr-only">Address</dt>
+              <dd class="font-large">{{ products.description }}</dd>
+            </div>
+          </dl>
+
+          <div class="mt-6 flex items-center gap-8 text-xs">
+            <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+              <svg
+                class="size-4 text-indigo-700"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <g id="Iconly/Curved/Category">
+                  <g id="Category">
+                    <path
+                      id="Stroke 1"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M21.0003 6.6738C21.0003 8.7024 19.3551 10.3476 17.3265 10.3476C15.2979 10.3476 13.6536 8.7024 13.6536 6.6738C13.6536 4.6452 15.2979 3 17.3265 3C19.3551 3 21.0003 4.6452 21.0003 6.6738Z"
+                      stroke="#4338ca"
+                      stroke-width="2.0"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      id="Stroke 3"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10.3467 6.6738C10.3467 8.7024 8.7024 10.3476 6.6729 10.3476C4.6452 10.3476 3 8.7024 3 6.6738C3 4.6452 4.6452 3 6.6729 3C8.7024 3 10.3467 4.6452 10.3467 6.6738Z"
+                      stroke="#4338ca"
+                      stroke-width="2.0"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      id="Stroke 5"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M21.0003 17.2619C21.0003 19.2905 19.3551 20.9348 17.3265 20.9348C15.2979 20.9348 13.6536 19.2905 13.6536 17.2619C13.6536 15.2333 15.2979 13.5881 17.3265 13.5881C19.3551 13.5881 21.0003 15.2333 21.0003 17.2619Z"
+                      stroke="#4338ca"
+                      stroke-width="2.0"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      id="Stroke 7"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10.3467 17.2619C10.3467 19.2905 8.7024 20.9348 6.6729 20.9348C4.6452 20.9348 3 19.2905 3 17.2619C3 15.2333 4.6452 13.5881 6.6729 13.5881C8.7024 13.5881 10.3467 15.2333 10.3467 17.2619Z"
+                      stroke="#4338ca"
+                      stroke-width="2.0"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                </g>
+              </svg>
+
+              <div class="mt-1.5 sm:mt-0">
+                <p class="text-gray-500">Categoria</p>
+                <p class="font-medium">{{ products.category_name }}</p>
+              </div>
+            </div>
+
+            <div class="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+              <svg
+                class="size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="#4338ca"
+                stroke-width="2"
+              >
+                <g id="active">
+                  <path
+                    d="M8.6,20.1l-7.8-8l1.4-1.4l6.4,6.5L21.8,3.9l1.4,1.4L8.6,20.1z"
+                  />
+                </g>
+              </svg>
+
+              <div class="mt-1.5 sm:mt-0">
+                <p class="text-gray-500">Estado</p>
+                <p class="font-medium">
+                  {% if products.is_active %}Activo{% else %}Inactivo{% endif %}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      {% comment %}
+      <h1 class="text-3xl font-bold underline">{{ products }}</h1>
+      <h2></h2>
+      <p>Descripción: {{ products.description }}</p>
+      <p>Precio: ${{ products.price }}</p>
+      <p>Categoría:</p>
+      <p>Estado:</p>
+      {% endcomment %}
+    </div>
+  </body>
+</html>
