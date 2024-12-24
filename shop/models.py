@@ -18,6 +18,7 @@ class Products(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='productsAll')
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='products',blank=True, null=True)
     
     class Meta:
         verbose_name_plural = 'Product'

@@ -13,7 +13,7 @@
           <div class="mt-4 bg-white shadow-md rounded-lg text-left">
             <div class="h-2 bg-purple-400 rounded-t-md"></div>
             <div class="px-8 py-6 ">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{form}}
                     <div class="flex justify-between items-baseline">
