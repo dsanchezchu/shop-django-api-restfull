@@ -17,6 +17,7 @@ class Products(models.Model):
     price = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='productsAll')
     is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     
     class Meta:
         verbose_name_plural = 'Product'
